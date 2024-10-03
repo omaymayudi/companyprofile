@@ -7,9 +7,14 @@
     @vite('resources/css/app.css')
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet"/>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+    <script>
+ 
+      </script>
+
     <title>Halaman Home</title>
 </head>
-<body class="h-full">
+<body class="h-full bg-stone-50 ">
    <!--
   This example requires updating your template:
 
@@ -21,7 +26,7 @@
 <div class="min-h-full">
     <nav class="bg-stone-50" x-data="{ isOpen: false }">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between mx-12">
+        <div class="flex h-16 items-center justify-between mx-32">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">    
@@ -110,10 +115,10 @@
         <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
       </div>
     </header> --}}
-    <main class="bg-stone-50">
+    <main class="mx-auto max-w-7xl">
       <!-- Your content About-->
       <section class="" name="about">
-        <div class="mx-auto max-w-7xl">
+        <div class="">
           <div class="mx-4 bg-cover h-[630px] bg-center rounded-[60px]" style="background-image: url(images/Hero.png)">
              <div class="text-center pt-28 px-12">
               <h2 class="text-white text-md text-center underline">WHO ARE WE</h1>
@@ -136,9 +141,41 @@
           </div>
         </div>
       </section>
+
+
+      <section name="services" class="pb-12">   
+
+<!-- Slider main container -->
+ <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+ <swiper-slide>
+   <div class="h-[650px] rounded-[60px]">
+     <img src="images/Hero.png" alt="" class="">
+   </div>
+ </swiper-slide>
+ <swiper-slide>
+   <div class="h-[650px] rounded-[60px]">
+     <img src="images/Hero.png" alt="" class="object-fill">
+   </div>
+ </swiper-slide>
+ <swiper-slide>
+   <div class="h-[650px]">
+     <img src="images/Hero.png" alt="" class="rounded-[60px]">
+   </div>
+ </swiper-slide>
+ <swiper-slide>
+   <div class="h-[650px]">
+     <img src="images/Hero.png" alt="" class="rounded-[60px]">
+   </div>
+ </swiper-slide>
+</swiper-container>
+
+      </section>
      
     </main>
   </div>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 </body>
 </html>

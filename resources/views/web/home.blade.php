@@ -26,120 +26,53 @@
   ```
 -->
     <div class="min-h-full">
-        <nav class="bg-stone-50" x-data="{ isOpen: false }">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between mx-32">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                alt="Your Company">
-                        </div>
-                        <div class="px-2">
-                            <a href="#"
-                                class="rounded-md px-3 py-2 text-lg font-bold text-[#0d730d] hover:underline">KRT GREEN
-                                INDONESIA</a>
-                        </div>
-
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6">
-                            <div class="hidden md:block">
-                                <div class="ml-10 flex items-baseline space-x-4">
-                                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                    <a href="#"
-                                        class="rounded-md px-3 py-2 text-md font-medium text-gray-700 hover:bg-gray-700 hover:text-white">About</a>
-                                    <a href="#"
-                                        class="rounded-md px-3 py-2 text-md font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Services</a>
-                                    <a href="#"
-                                        class="rounded-md px-3 py-2 text-md font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Products</a>
-                                    <a href="#"
-                                        class="rounded-md px-3 py-2 text-md font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Blogs</a>
-                                    <a href="#"
-                                        class="rounded-md px-3 py-2 text-md font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact</a>
-
-                                </div>
-                            </div>
-
-                            <!-- Profile dropdown -->
-                            {{-- <div class="relative ml-3">
-                <div >
-                  <button type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                  </button>
+        <nav class="p-4" x-data="{ isOpen: false }">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-gray-700 text-lg font-bold">
+                    MyWebsite
                 </div>
-  
-               
-                <div 
-                 x-show="isOpen"
-                x-transition:enter="transition ease-out duration-100 transform"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100"
-                x-transition:leave="transition ease-in duration-75 transform"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95"
-            
-                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                  <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+
+                <!-- Hamburger Icon for Mobile -->
+                <div class="md:hidden">
+                    <button @click="isOpen = !isOpen" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
                 </div>
-              </div> --}}
-                        </div>
-                    </div>
-                    <div class="-mr-2 flex md:hidden">
-                        <!-- Mobile menu button -->
-                        <button @click="isOpen = !isOpen" type="button"
-                            class="relative inline-flex items-center justify-center rounded-md bg-stone-50 p-2 text-gray-800 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                            aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open main menu</span>
-                            <!-- Menu open: "hidden", Menu closed: "block" -->
-                            <svg :class="{ 'hidden': isOpen, 'block': !isOpen }" class="block h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <!-- Menu open: "block", Menu closed: "hidden" -->
-                            <svg :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
+
+                <!-- Navbar Links (Desktop) -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-gray-300">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-300">About</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-300">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-300">Contact</a>
                 </div>
             </div>
 
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden" id="mobile-menu" x-show="isOpen">
-                <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-                        aria-current="page">Dashboard</a>
-                    <a href="#"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                    <a href="#"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                    <a href="#"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-                    <a href="#"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+            <!-- Mobile Menu -->
+            <div x-show="isOpen" class="md:hidden mt-4 w-screen h-screen">
+                <div class="flex justify-center items-center w-full">
+                    <ul class="justify-center space-y-10">
+                        <li><a href="#" class=" text-gray-700 hover:bg-blue-700">Home</a></li>
+                        <li><a href="#" class=" text-gray-700 hover:bg-blue-700">Home</a></li>
+                        <li><a href="#" class=" text-gray-700 hover:bg-blue-700">Home</a></li>
+                        <li><a href="#" class=" text-gray-700 hover:bg-blue-700">Home</a></li>
+                    </ul>
+
                 </div>
             </div>
         </nav>
 
-        {{-- <header class="bg-white shadow">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
-      </div>
-    </header> --}}
-        <main class="mx-auto max-w-7xl">
+
+        <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"">
             <!-- Your content About-->
             <section class="" name="about" class="w-full h-screen">
-                <div class="">
-                    <div class="mx-4 shadow-2xl bg-cover h-[500px] bg-center rounded-[60px] "
+                <div class="py-8 px-4 mx-auto max-w-screen-xl text-center">
+                    <div class="shadow-2xl bg-cover h-[500px] bg-center rounded-[60px] "
                         style="background-image: url(images/Hero.png)">
                         <div class="text-center pt-28 px-12">
                             <h2 class="text-white text-md text-center underline">WHO ARE WE</h1>
@@ -179,8 +112,8 @@
 
                 <!-- Slider main container -->
                 <div>
-                    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true"
-                        navigation="true" space-between="30" centered-slides="true" autoplay-delay="2500"
+                    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true"
+                        space-between="30" centered-slides="true" autoplay-delay="2500"
                         autoplay-disable-on-interaction="false">
                         <swiper-slide>
                             <div class="h-[450px] rounded-[60px] overflow-hidden">
@@ -336,7 +269,7 @@
 
             <section name="contact">
                 <div class="bg-green-500 w-full h-auto rounded-[60px] shadow-xl">
-                    <div class="py-20">
+                    <div class="py-20 px-32">
                         <div class="text-center">
                             <div class="justify-center pb-4">
                                 <h2 class="text-orange-400 text-sm underline text-center">CONTACT</h2>
@@ -345,7 +278,7 @@
                                 <h2 class="text-white text-2xl font-bold">Feel Free to Contact US</h2>
                             </div>
                         </div>
-                        <form action="" class="px-32 space-y-4">
+                        <form action="" class=" space-y-4">
 
                             <input type="text" id="first_name"
                                 class="bg-gray-50 border border-gray-300 text-center text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
@@ -359,12 +292,64 @@
                             <textarea type="text area" id="first_name"
                                 class="bg-gray-50 border h-32 border-gray-300 text-center text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
                                 placeholder="Your message" required></textarea>
-
+                            <div class="flex justify-center items-center pt-4">
+                                <button type="button"
+                                    class="text-white  bg-gradient-to-r from-slate-600 to-slate-700 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 shadow-lg hover:bg-gradient-to- hover:from-gray-700 hover:to-gray-600">SAND
+                                    YOUR MESSAGE</button>
+                            </div>
                         </form>
+
+                    </div>
+                </div>
+                <div class="pt-16 px-32">
+                    <div class="space-y-2">
+                        <h2 class="text-md text-gray-600">Lorem ipsum dolor </h2>
+                        <h1 class="text-xl text-gray-800 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Totam,</h1>
+                    </div>
+                    <div class="flex space-x-24 justify-between pt-6">
+                        <div class="space-y-2">
+                            <h2 class="text-green-600">Send us an email <i class="fa-solid fa-envelope"
+                                    style="color: #43A047;"></i></h2>
+                            <p>email.com</p>
+                        </div class="space-y-2">
+                        <div class="space-y-2">
+                            <h2 class="text-green-600">Give us a call <i class="fa-solid fa-phone"
+                                    style="color: #43A047;"></i></h2>
+                            <p>083333333333</p>
+                        </div class="space-y-2">
+                        <div class="space-y-2">
+                            <h2 class="text-green-600">Visit our office <i class="fa-solid fa-building"
+                                    style="color: #43A047;"></i></h2>
+                        </div>
+                        <div class="space-y-2">
+                            <h2 class="text-green-600">Send us a package <i class="fa-solid fa-building"
+                                    style="color: #43A047;"></i></h2>
+
+                        </div>
                     </div>
                 </div>
             </section>
+            <footer class="pt-16">
+                <hr class="bg-green-600 font-bold text-lg w-full h-1 rounded border-0 opacity-65">
+                <div class="w-full h-14 px-12 pt-2 flex justify-between">
+                    <div class="w-1/2 flex">
+                        <p class="text-gray-500"><span class="text-2xl text-gray-500">©</span> 2024 PT. KRT GREEN
+                            INDONESIA</p>
+                    </div>
+                    <div class="w-1/2 flex  justify-end ">
+                        <li class="flex space-x-6 text-2xl text-gray-500">
+                            <ul><i class="fa-brands fa-linkedin"></i></ul>
+                            <ul><i class="fa-brands fa-square-instagram"></i></i></ul>
+                            <ul><i class="fa-brands fa-square-facebook"></i></ul>
+                            <ul><i class="fa-solid fa-map-location-dot"></i></ul>
+                        </li>
+                    </div>
+                </div>
+            </footer>
         </main>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

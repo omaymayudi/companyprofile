@@ -16,7 +16,7 @@
         <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">general</p>
 
         <!-- link -->
-        <x-link-nav href="/admin/setting">
+        <x-link-nav href="{{ route('setting') }}">
             Setting
         </x-link-nav>
         <!-- end link -->

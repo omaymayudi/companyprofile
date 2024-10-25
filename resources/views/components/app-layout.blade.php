@@ -63,7 +63,7 @@
                 <!-- end header -->
 
                 <!-- body -->
-                <div class="card-body grid grid-cols-2 gap-6 lg:grid-cols-1">
+                <div class="card-body">
 
 
                     {{ $slot }}
